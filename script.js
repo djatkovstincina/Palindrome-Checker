@@ -13,7 +13,13 @@ const checkPalindrome = input => {
 
     result.replaceChildren();
 
-    result.innerHTML = `${originalInput} ${lowerCaseStr === lowerCaseStr.split('').reverse().join('') ? 'is' : 'is not'} a palindrome`;
+    const isPalindrome = lowerCaseStr === [...lowerCaseStr].reverse().join('');
+    const message = `${originalInput} ${isPalindrome ? 'is' : 'is not'} a palindrome.`;
+
+    const pTag = document.createElement('p');
+    pTag.className = isPalindrome ? 'text-success' : 'text-danger';
+    pTag.innerHTML = message;
+    result.appendChild(pTag);
 }
 
 btn.addEventListener('click', () => {

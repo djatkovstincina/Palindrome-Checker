@@ -17,7 +17,6 @@ body {
   background-color: var(--dark-grey);
 }
 
-input {
-    background-color: var(--yellow);
-    color: var(--dark-grey);
+.container .row {
+    height: 100vh;
 }
